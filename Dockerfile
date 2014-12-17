@@ -5,7 +5,7 @@
 FROM dockerfile/java:oracle-java8
 
 # Install kibana
-ENV KIBANA_VERSION 4.0.0-BETA2
+ENV KIBANA_VERSION 4.0.0-beta3
 RUN \
   cd /tmp && \
   wget https://download.elasticsearch.org/kibana/kibana/kibana-$KIBANA_VERSION.tar.gz && \
