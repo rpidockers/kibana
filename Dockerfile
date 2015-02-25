@@ -2,20 +2,18 @@
 # jpodeszwik/kibana Dockerfile
 #
  
-FROM dockerfile/java:oracle-java8
+FROM debian:jessie
+
+RUN apt-get update && apt-get install -y wget
 
 # Install kibana
-ENV KIBANA_VERSION 4.0.0-beta3
+ENV KIBANA_VERSION 4.0.0
 RUN \
   cd /tmp && \
-  wget https://download.elasticsearch.org/kibana/kibana/kibana-$KIBANA_VERSION.tar.gz && \
-  tar -xvzf kibana-$KIBANA_VERSION.tar.gz && \
-  mv /tmp/kibana-$KIBANA_VERSION /opt && \
-  rm kibana-$KIBANA_VERSION.tar.gz
-
-# Change port
-RUN \
-  sed -i 's/port: 5601/port: 80/g' /opt/kibana-$KIBANA_VERSION/config/kibana.yml
+  wget https://download.elasticsearch.org/kibana/kibana/kibana-$KIBANA_VERSION-linux-x64.tar.gz && \
+  tar -xvzf kibana-$KIBANA_VERSION-linux-x64.tar.gz && \
+  mv /tmp/kibana-$KIBANA_VERSION-linux-x64 /opt && \
+  rm kibana-$KIBANA_VERSION-linux-x64.tar.gz
 
 ADD run.sh /bin/run.sh
 CMD /bin/run.sh
