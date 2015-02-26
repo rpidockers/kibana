@@ -15,6 +15,8 @@ RUN \
   mv /tmp/kibana-$KIBANA_VERSION-linux-x64 /opt && \
   rm kibana-$KIBANA_VERSION-linux-x64.tar.gz
 
+VOLUME /data
+
 ADD run.sh /bin/run.sh
 CMD /bin/run.sh
 
