@@ -7,7 +7,7 @@ FROM debian:jessie
 RUN apt-get update && apt-get install -y wget
 
 # Install kibana
-ENV KIBANA_VERSION 4.0.0
+ENV KIBANA_VERSION 4.0.2
 RUN \
   cd /tmp && \
   wget https://download.elasticsearch.org/kibana/kibana/kibana-$KIBANA_VERSION-linux-x64.tar.gz && \
