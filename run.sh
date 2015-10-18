@@ -1,6 +1,6 @@
 #!/bin/sh
 
 # set elasticsearch location
-sed -i "s/^elasticsearch_url: .*/elasticsearch_url: \"http:\/\/$ELASTICSEARCH\"/g" /opt/kibana-$KIBANA_VERSION-linux-x64/config/kibana.yml
+sed -i "s/^elasticsearch_url: .*/elasticsearch_url: \"http:\/\/$ELASTICSEARCH\"/g" /opt/kibana/config/kibana.yml
 
-exec /opt/kibana-$KIBANA_VERSION-linux-x64/bin/kibana > /data/kibana.log 
+exec /opt/kibana/bin/kibana > /data/kibana.log 
