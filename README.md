@@ -1,4 +1,11 @@
 # rpidockers/kibana
+Image was tested on my ODROID-U3. It should also work on Raspberry Pi, but if not, you'll have to build it yourself.
+
+```
+$ git clone https://github.com/rpidockers/kibana.git
+$ docker build -t rpidockers/kibana kibana
+```
+
 ## Tags
 [4.1.2](https://github.com/rpidockers/kibana/blob/4.1.2/Dockerfile)
 
